@@ -69,6 +69,7 @@
 @section('script')
 <script>
     $(document).ready(function(){
+      console.log("ok")
       var provider = new firebase.auth.GoogleAuthProvider();
       provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
       firebase.auth().languageCode = 'vn';
