@@ -16,7 +16,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use("Route");
 
-Route.on('/').render('layouts.header')
+Route.on('/').render('index')
 Route.resource("brands", "BrandController");
 Route.resource("services", "ServiceController");
 Route.resource("stores", "StoreController");
