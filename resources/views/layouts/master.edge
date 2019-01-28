@@ -17,7 +17,28 @@
   {{ style('css/ion.rangeSlider.skinFlat')}}
   {{ style('css/magnific-popup')}}
   {{ style('css/main')}}
+  {{--  {{ script('https://www.gstatic.com/firebasejs/5.8.1/firebase.js')}}  --}}
 
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
+
+  <!-- Add additional services that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
+  {{--  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-database.js"></script>  --}}
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-firestore.js"></script>
+  {{--  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-messaging.js"></script>  --}}
+  {{--  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-functions.js"></script>  --}}
+
+  <script>
+  var config = {
+    apiKey: "AIzaSyCJrFVl5H5d5_Df6WTxItW63b8p3adFjB8",
+    authDomain: "chat-online-8cfbf.firebaseapp.com",
+    databaseURL: "https://chat-online-8cfbf.firebaseio.com",
+    projectId: "chat-online-8cfbf",
+    storageBucket: "chat-online-8cfbf.appspot.com",
+    messagingSenderId: "248943871572"
+  };
+  firebase.initializeApp(config);
+</script>
 </head>
 <body>
     @include('layouts.header')
@@ -36,21 +57,11 @@
     {{ script('js/jquery.magnific-popup.min')}}
     {{ script('js/owl.carousel.min')}}
     {{ script('https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE')}}
-    {{ script('https://www.gstatic.com/firebasejs/5.7.2/firebase.js')}}
+
     {{ script('js/gmaps.min')}}
     {{ script('js/main')}}
 
-<script>
-  var config = {
-    apiKey: "AIzaSyCJrFVl5H5d5_Df6WTxItW63b8p3adFjB8",
-    authDomain: "chat-online-8cfbf.firebaseapp.com",
-    databaseURL: "https://chat-online-8cfbf.firebaseio.com",
-    projectId: "chat-online-8cfbf",
-    storageBucket: "chat-online-8cfbf.appspot.com",
-    messagingSenderId: "248943871572"
-  };
-  firebase.initializeApp(config);
-</script>
+
   @section('script')
   @endsection
 </body>
