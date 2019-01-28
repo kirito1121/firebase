@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="img/fav.png">
   <title>Firebase</title>
   <link rel="stylesheet" href="css/linearicons.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -35,7 +36,20 @@
   <script src="js/owl.carousel.min.js"></script>
   <!--gmaps Js-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
   <script src="js/gmaps.min.js"></script>
   <script src="js/main.js"></script>
+<script>
+  var config = {
+    apiKey: "AIzaSyCJrFVl5H5d5_Df6WTxItW63b8p3adFjB8",
+    authDomain: "chat-online-8cfbf.firebaseapp.com",
+    databaseURL: "https://chat-online-8cfbf.firebaseio.com",
+    projectId: "chat-online-8cfbf",
+    storageBucket: "chat-online-8cfbf.appspot.com",
+    messagingSenderId: "248943871572"
+  };
+  firebase.initializeApp(config);
+  console.log(firebase)
+</script>
 </body>
 </html>
