@@ -6,39 +6,40 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="shortcut icon" href="img/fav.png">
   <title>Firebase</title>
-  <link rel="stylesheet" href="css/linearicons.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/themify-icons.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/owl.carousel.css">
-  <link rel="stylesheet" href="css/nice-select.css">
-  <link rel="stylesheet" href="css/nouislider.min.css">
-  <link rel="stylesheet" href="css/ion.rangeSlider.css" />
-  <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <link rel="stylesheet" href="css/main.css">
+  {{ style('css/linearicons')}}
+  {{ style('css/font-awesome.min')}}
+  {{ style('css/themify-icons')}}
+  {{ style('css/bootstrap')}}
+  {{ style('css/owl.carousel')}}
+  {{ style('css/nice-select')}}
+  {{ style('css/nouislider.min')}}
+  {{ style('css/ion.rangeSlider')}}
+  {{ style('css/ion.rangeSlider.skinFlat')}}
+  {{ style('css/magnific-popup')}}
+  {{ style('css/main')}}
+
 </head>
 <body>
     @include('layouts.header')
     @section('content')
     @endsection
     @include('layouts.footer')
-  <script src="js/vendor/jquery-2.2.4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-   crossorigin="anonymous"></script>
-  <script src="js/vendor/bootstrap.min.js"></script>
-  <script src="js/jquery.ajaxchimp.min.js"></script>
-  <script src="js/jquery.nice-select.min.js"></script>
-  <script src="js/jquery.sticky.js"></script>
-  <script src="js/nouislider.min.js"></script>
-  <script src="js/countdown.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <!--gmaps Js-->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-  <script src="js/gmaps.min.js"></script>
-  <script src="js/main.js"></script>
+    {{ script('js/vendor/jquery-2.2.4.min')}}
+    {{ script('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js')}}
+    {{ script('js/vendor/bootstrap.min')}}
+    {{ script('js/jquery.ajaxchimp.min')}}
+    {{ script('js/jquery.nice-select.min')}}
+    {{ script('js/jquery.sticky')}}
+    {{ script('js/nouislider.min')}}
+    {{ script('js/countdown')}}
+    {{ script('js/jquery.magnific-popup.min')}}
+    {{ script('js/jquery.magnific-popup.min')}}
+    {{ script('js/owl.carousel.min')}}
+    {{ script('https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE')}}
+    {{ script('https://www.gstatic.com/firebasejs/5.7.2/firebase.js')}}
+    {{ script('js/gmaps.min')}}
+    {{ script('js/main')}}
+
 <script>
   var config = {
     apiKey: "AIzaSyCJrFVl5H5d5_Df6WTxItW63b8p3adFjB8",
@@ -49,7 +50,6 @@
     messagingSenderId: "248943871572"
   };
   firebase.initializeApp(config);
-  console.log(firebase)
 </script>
 </body>
 </html>

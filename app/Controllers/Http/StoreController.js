@@ -27,6 +27,12 @@ class StoreController {
       return error;
     }
   }
+
+
+  async listStore({params,view}) {
+    console.log(params);
+    return view.render('stores');
+  }
 }
 
 module.exports = StoreController;
