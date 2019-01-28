@@ -19,6 +19,9 @@ const Route = use("Route");
 Route.on('/').render('index').as('home')
 Route.get("/orders","OrderController.order");
 Route.get('/login',"UserController.login").as('login');
+Route.get('/contact',({view}) =>{
+  return view.render('contact')
+}).as('contact');
 Route.resource("brands", "BrandController");
 Route.resource("services", "ServiceController");
 Route.resource("stores", "StoreController");
