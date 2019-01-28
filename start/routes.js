@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,10 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use("Route");
 
 Route.on('/').render('layouts.header')
+Route.resource("brands", "BrandController");
+Route.resource("services", "ServiceController");
+Route.resource("stores", "StoreController");
+Route.resource("extras", "ExtraController");
