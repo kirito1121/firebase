@@ -20,6 +20,9 @@ Route.on('/').render('index').as('home')
 Route.get("/orders","OrderController.order");
 Route.get('/login',"UserController.login").as('login');
 Route.get('/brand/:slug_brand/store/:slug_store',"StoreController.listStore").as("getstore");
+Route.get('/contact',({view}) =>{
+  return view.render('contact')
+}).as('contact');
 Route.resource("brands", "BrandController");
 Route.resource("services", "ServiceController");
 Route.resource("stores", "StoreController");
