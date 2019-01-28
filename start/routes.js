@@ -19,6 +19,7 @@ const Route = use("Route");
 Route.on('/').render('index').as('home')
 Route.get("/orders","OrderController.order");
 Route.get('/login',"UserController.login").as('login');
+Route.get('/register',"UserController.register").as('register');
 Route.get('/brand/:slug_brand/store/:slug_store',"StoreController.listStore").as("getstore");
 Route.get('/contact',({view}) =>{
   return view.render('contact')

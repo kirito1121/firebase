@@ -5,10 +5,10 @@
   <div class="container">
     <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
       <div class="col-first">
-        <h1>Đăng nhập</h1>
+        <h1>Đăng ký</h1>
         <nav class="d-flex align-items-center">
           <a href="{{route('home')}}">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
-          <a href="{{route('login')}}">Đăng nhập</a>
+          <a href="{{route('login')}}">Đăng ký</a>
         </nav>
       </div>
     </div>
@@ -24,31 +24,26 @@
         <div class="login_box_img">
           <img class="img-fluid" src="{{ assetsUrl('img/login.jpg') }}" alt="">
           <div class="hover">
-            <h4>Chào mừng đến với KARMA</h4>
-            <p>Order nhanh chóng và tiện lợi với dịch vụ của KARMA</p>
-            <a class="primary-btn" href="{{route('register')}}">Tạo một tài khoản</a>
+            <h4>Đăng ký tài khoản KARMA</h4>
+            <p>Nhận nhiều ưu đãi cực sốc</p>
           </div>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="login_form_inner">
-          <h3>Đăng nhập ngay!!!</h3>
-          <form class="row login_form" action="#" method="post" id="contactForm" >
+          <h3>Đăng ký ngay!!!</h3>
+          <form class="row login_form" action="#" method="post" id="contactForm">
             <div class="col-md-12 form-group">
               <input type="email" class="form-control" id="name" name="name" placeholder="Nhập email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nhập email'" required>
             </div>
             <div class="col-md-12 form-group">
-              <input type="password" class="form-control" id="pass" name="pass" placeholder="Mật khẩu" min="6" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mật khẩu'" required>
+              <input type="password" class="form-control" id="password" name="pass" placeholder="Mật khẩu" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mật khẩu'" min="6" required>
             </div>
             <div class="col-md-12 form-group">
-              <div class="creat_account">
-                <input type="checkbox" id="f-option2" name="selector">
-                <label for="f-option2">Lưu mật khẩu</label>
+                <input type="password" class="form-control" id="confirm_password" name="passtwo" placeholder="Nhập lại mật khẩu" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nhập lại mật khẩu'" min="6" required>
               </div>
-            </div>
             <div class="col-md-12 form-group">
-              <button type="submit" value="submit" class="primary-btn">Đăng nhập</button>
-              <a href="#">Quên mật khẩu?</a>
+              <button type="submit" value="submit" class="primary-btn">Đăng ký</button>
             </div>
           </form>
           <div class="col-md-12 form-group">
@@ -69,6 +64,19 @@
 @section('script')
 <script>
     $(document).ready(function(){
+      var password = document.getElementById("password")
+      ,confirm_password = document.getElementById("confirm_password");
+
+      function validatePassword(){
+        if(password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+          confirm_password.setCustomValidity('');
+        }
+      }
+      
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword;
       var provider = new firebase.auth.GoogleAuthProvider();
       provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
       firebase.auth().languageCode = 'vn';

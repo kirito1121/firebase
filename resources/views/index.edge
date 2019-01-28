@@ -969,3 +969,20 @@
         <!-- End related-product Area -->
         {{ script('js/countdown')}}
         @endsection
+        @section('script')
+        <script>
+          var db = firebase.firestore();
+          db.collection("brands")
+          .get()
+          .then(function(querySnapshot) {
+              querySnapshot.forEach(function(doc) {
+                  console.log(doc.id, " => ", doc.data());
+              });
+          })
+          .catch(function(error) {
+              console.log("Error getting documents: ", error);
+          });
+
+
+          </script>
+        @endsection
