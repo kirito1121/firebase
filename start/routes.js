@@ -18,7 +18,7 @@ const Route = use("Route");
 
 Route.on('/').render('index')
 Route.get("/orders","OrderController.order");
-Route.get('/login',"UserController.login");
+Route.get('/login',"UserController.login").as('login');
 Route.resource("brands", "BrandController");
 Route.resource("services", "ServiceController");
 Route.resource("stores", "StoreController");
