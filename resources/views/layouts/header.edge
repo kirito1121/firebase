@@ -28,7 +28,7 @@
                             </li>
                             <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Liên Hệ</a></li>
                             @loggedIn
-                            <li class="nav-item"><a href="{{route('logout',{ id:auth.user.id })}}" class="nav-link">{{ auth.user.username }}</a></li>
+                            <li class="nav-item"><a href="{{route('logout',{ id:auth.user.id })}}" class="nav-link">XIN CHÀO {{ auth.user.username }}</a></li>
                             @else
 
                             @endloggedIn
