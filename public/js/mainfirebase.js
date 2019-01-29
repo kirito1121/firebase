@@ -128,8 +128,36 @@ function myScript(data){
      class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
     <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
      class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-  </div>`;
+  </div>
+  <div id="extra" >
+
+</div>`;
+
+
 $("#bodyservice").append(html);
+item.data().extras.forEach(extra=>{
+  const h = `<div class="row">
+	<h4>${extra.name}:</h4>
+  <div class="btn-group" data-toggle="buttons" id="${extra.name+extra.id}">
+
+  </div>
+</div>`;
+$("#extra").append(h);
+extra.options.forEach(option=>{
+  if(option.default){
+const op = `<label class="btn  active">
+<input type="radio" name="${extra.name+extra.id}" id="${extra.name+extra.id}" checked> ${option.value}
+</label>`
+$("#"+extra.name+extra.id).append(op)
+  }else{
+    const op = `<label class="btn ">
+    <input type="radio" name="${extra.name+extra.id}" id="${extra.name+extra.id}"> ${option.value}
+  </label>`
+  $("#"+extra.name+extra.id).append(op)
+  }
+
+})
+})
     })
 }
 
