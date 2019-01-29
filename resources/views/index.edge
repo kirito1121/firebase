@@ -25,7 +25,7 @@
                                   </div>
                               </div>
                               <!-- single-slide -->
-                              <div class="row single-slide">
+                              <div class="row single-slide align-items-center d-flex">
                                   <div class="col-lg-5">
                                       <div class="banner-content">
                                           <h1>Caffe Đen<br>Sài gòn!</h1>
@@ -38,7 +38,7 @@
                                   </div>
                                   <div class="col-lg-7">
                                       <div class="banner-img">
-                                          <img class="img-fluid" src="img/banner/banner-img.png" alt="">
+                                          <img class="img-fluid" src="img/banner/banner-img2.png" alt="">
                                       </div>
                                   </div>
                               </div>
@@ -69,8 +69,8 @@
                               <div class="f-icon">
                                   <img src="img/features/f-icon2.png" alt="">
                               </div>
-                              <h6>Return Policy</h6>
-                              <p>Free Shipping on all order</p>
+                              <h6>Bao đổi trả</h6>
+                              <p>Có thể trả lại sai khi uống xong</p>
                           </div>
                       </div>
                       <!-- single features -->
@@ -79,8 +79,8 @@
                               <div class="f-icon">
                                   <img src="img/features/f-icon3.png" alt="">
                               </div>
-                              <h6>24/7 Support</h6>
-                              <p>Free Shipping on all order</p>
+                              <h6>24/7 Hổ trợ xuyên đêm</h6>
+                              <p>Bao phòng</p>
                           </div>
                       </div>
                       <!-- single features -->
@@ -89,15 +89,15 @@
                               <div class="f-icon">
                                   <img src="img/features/f-icon4.png" alt="">
                               </div>
-                              <h6>Secure Payment</h6>
-                              <p>Free Shipping on all order</p>
+                              <h6>Thanh toán bảo mật</h6>
+                              <p>Có khu thanh toán riêng ko camera</p>
                           </div>
                       </div>
                   </div>
               </div>
           </section>
           <!-- end features Area -->
-  
+
 
         <!-- start product Area -->
         <section class="owl-carousel active-product-area section_gap">
@@ -914,6 +914,19 @@
           .catch(function(error) {
               console.log("Error getting documents: ", error);
           });
+
+
+          db.collection("brands")
+          .get()
+          .then(function(querySnapshot) {
+              querySnapshot.forEach(function(doc) {
+                  console.log(doc.id, " => ", doc.data());
+              });
+          })
+          .catch(function(error) {
+              console.log("Error getting documents: ", error);
+          });
+
 
 
           </script>
