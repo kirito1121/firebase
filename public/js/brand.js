@@ -14,7 +14,7 @@ function getStore(data){
     .get()
     .then(snapshot=>{
       snapshot.forEach(doc => {
-        console.log(doc.data())
+        // console.log(doc.data())
         const html = `<div class="col-lg-4">
                         <div class="categories_post">
                             <img src="../img/blog/cat-post/cat-post-`+doc.data().id+`.jpg" alt="post">
@@ -43,11 +43,16 @@ function getDetailBrand(){
     let db = firebase.firestore();
     db.collection('brands').where('slug','==',slug).get()
     .then(snapshot=>{
-      snapshot.forEach(doc => {
-        console.log(doc.data())
-$("#brand").html(doc.data().name)
-        getStore(doc.data())
-      });
+      if(snapshot.size >0){
+        snapshot.forEach(doc => {
+          $("#brand").html(doc.data().name)
+          getStore(doc.data())
+        });
+      }else{
+        $("#brand").html("")
+        const html = `<div class="container justify-content-center d-flex"><h4>Không tìm thấy thông tin cửa hàng</h4></div>`;
+        $("#brands").append(html)
+      }
     })
   }
 }

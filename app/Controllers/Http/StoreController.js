@@ -3,12 +3,11 @@ const FirebaseAdmin = use("FirebaseAdmin");
 class StoreController {
   async store({ request, response }) {
     try {
-      let { name, description, slug, id, brand_id } = request.all();
+      let { slug, id } = request.all();
       let db = FirebaseAdmin.firestore();
       let ref = db.collection("stores").doc(`${slug}-${id}`);
       id = parseInt(id);
-      brand_id = parseInt(brand_id);
-      await ref.set({ name, description, slug, id, brand_id });
+      await ref.set(request.all());
       response.json({ success: true });
     } catch (error) {
       return error;
@@ -17,25 +16,23 @@ class StoreController {
 
   async update({ params, request, response }) {
     try {
-      let { name, description, slug, brand_id } = request.all();
+      let { slug } = request.all();
       let db = FirebaseAdmin.firestore();
       let ref = db.collection("stores").doc(`${slug}-${params.id}`);
-      brand_id = parseInt(brand_id);
-      await ref.update({ name, description, brand_id });
+      await ref.update(request.all());
       response.json({ success: true });
     } catch (error) {
       return error;
     }
   }
 
-
-  async listStore({params,view}) {
+  async listStore({ params, view }) {
     console.log(params);
-    return view.render('store.index', {params});
+    return view.render("store.index", { params });
   }
-  async detailstore({params,view}) {
+  async detailstore({ params, view }) {
     console.log(params);
-    return view.render('store.detail', {params});
+    return view.render("store.detail", { params });
   }
 }
 
