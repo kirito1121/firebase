@@ -28,11 +28,11 @@ class StoreController {
 
   async listStore({ params, view }) {
     console.log(params);
-    return view.render("store.index", { params });
+    return view.render("store.index");
   }
   async detailstore({ params, view }) {
     console.log(params);
-    return view.render("store.detail", { params });
+    return view.render("store.detail",);
   }
 }
 

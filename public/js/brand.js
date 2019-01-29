@@ -20,7 +20,7 @@ function getStore(data){
                             <img src="../img/blog/cat-post/cat-post-`+doc.data().id+`.jpg" alt="post">
                             <div class="categories_details">
                                 <div class="categories_text">
-                                    <a href="blog-details.html">
+                                    <a href="`+data.slug+`/store/`+doc.data().slug+`">
                                         <h5>`+doc.data().name+`</h5>
                                     </a>
                                     <div class="border_line"></div>
