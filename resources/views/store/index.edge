@@ -1,0 +1,66 @@
+@layout('layouts.master')
+@section('content')
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+      <div class="col-first">
+      <h1 id="brand">{{ params.slug_brand }}</h1>
+        <nav class="d-flex align-items-center">
+          <a href="{{route('home')}}">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+          <a href="#">Brand</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Banner Area -->
+<!--================Blog Categorie Area =================-->
+<section class="blog_categorie_area">
+  <div class="container">
+      <div class="row" id="brands">
+         <!-- <div class="col-lg-4">
+              <div class="categories_post">
+                  <img src="{{assetsUrl('img/blog/cat-post/cat-post-3.jpg')}}" alt="post">
+                  <div class="categories_details">
+                      <div class="categories_text">
+                          <a href="blog-details.html">
+                              <h5>Social Life</h5>
+                          </a>
+                          <div class="border_line"></div>
+                          <p>Enjoy your social life together</p>
+                      </div>
+                  </div>
+              </div>
+          </div> --->
+      </div>
+  </div>
+</section>
+<nav class="blog-pagination justify-content-center d-flex">
+  <ul class="pagination">
+      <li class="page-item">
+          <a href="#" class="page-link" aria-label="Previous">
+              <span aria-hidden="true">
+                  <span class="lnr lnr-chevron-left"></span>
+              </span>
+          </a>
+      </li>
+      <li class="page-item"><a href="#" class="page-link">01</a></li>
+      <li class="page-item active"><a href="#" class="page-link">02</a></li>
+      <li class="page-item"><a href="#" class="page-link">03</a></li>
+      <li class="page-item"><a href="#" class="page-link">04</a></li>
+      <li class="page-item"><a href="#" class="page-link">09</a></li>
+      <li class="page-item">
+          <a href="#" class="page-link" aria-label="Next">
+              <span aria-hidden="true">
+                  <span class="lnr lnr-chevron-right"></span>
+              </span>
+          </a>
+      </li>
+  </ul>
+</nav>
+<!--================Blog Categorie Area =================-->
+@endsection
+@section('script')
+  {{ script('js/brand')}}
+@endsection

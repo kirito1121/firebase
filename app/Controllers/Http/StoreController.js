@@ -31,7 +31,11 @@ class StoreController {
 
   async listStore({params,view}) {
     console.log(params);
-    return view.render('stores');
+    return view.render('store.index', {params});
+  }
+  async detailstore({params,view}) {
+    console.log(params);
+    return view.render('store.detail', {params});
   }
 }
 
