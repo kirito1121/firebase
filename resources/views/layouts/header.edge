@@ -27,10 +27,14 @@
                                  aria-expanded="false">My Order</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Liên Hệ</a></li>
+                            @loggedIn
+                            <li class="nav-item"><a href="{{route('logout',{ id:auth.user.id })}}" class="nav-link">XIN CHÀO {{ auth.user.username }}</a></li>
+                            @else
+
+                            @endloggedIn
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             @loggedIn
-                            <li class="nav-item"><a href="{{route('profile',{ id:auth.user.id })}}" class="cart">{{ auth.user.username }}</a></li>
                             @else
                             <li class="nav-item"><a href="{{route('login')}}" class="cart"><span><i class="fa fa-user"></i></span></a></li>
                             @endloggedIn

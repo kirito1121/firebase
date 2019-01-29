@@ -19,10 +19,12 @@ const Route = use("Route");
 Route.on('/').render('index').as('home')
 Route.get("/orders","OrderController.order");
 Route.get('/login',"UserController.login").as('login');
+Route.get('/logout',"UserController.logout").as('logout');
 Route.get('/register',"UserController.register").as('register');
 Route.post('/register',"UserController.postRegister").as('postregister');
 Route.get('/brand/:slug_brand/store/:slug_store',"StoreController.detailstore").as("detailstore");
 Route.get('/brand/:slug_brand',"StoreController.listStore").as("getstore");
+Route.post('/login',"UserController.postLogin").as('postlogin');
 Route.get('/contact',({view}) =>{
   return view.render('contact')
 }).as('contact');
