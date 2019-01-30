@@ -7,6 +7,15 @@ $(document).ready(function(){
 localStorage.clear()
   });
 
+  if(localStorage.getItem('user')){
+    let name = JSON.parse(localStorage.getItem('user')).displayName
+    const dulu = `<a href="" class="nav-link">XIN CHÀO ${name}</a>`;
+    $(".acici").append(dulu)
+  }else{
+    const dulu = `<a href="login" class="cart"><span><i class="fa fa-user"></i></span></a>`;
+    $(".namene").append(dulu)
+  }
+
 	var window_width 	 = $(window).width(),
 	window_height 		 = window.innerHeight,
 	header_height 		 = $(".default-header").height(),
