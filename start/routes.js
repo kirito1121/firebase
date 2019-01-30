@@ -17,6 +17,7 @@
 const Route = use("Route");
 
 Route.on('/').render('index').as('home')
+Route.get("/carts","OrderController.cart").as('shoppingcart');
 Route.get("/orders","OrderController.order");
 Route.get('/login',"UserController.login").as('login');
 Route.get('/logout',"UserController.logout").as('logout');

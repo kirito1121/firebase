@@ -1,4 +1,5 @@
 
+var serviceCurrent= "";
 $(function() {
 
   getBrand();
@@ -10,7 +11,7 @@ function getServiceGroups(data) {
   if (firebase) {
     var db = firebase.firestore();
     let arr = [];
-    let result = db.collection("serviceGroups")
+    db.collection("serviceGroups")
       .where('brand.id','==',data.id)
       .get()
       .then(snapshot => {
@@ -114,8 +115,9 @@ function myScript(data){
   var db = firebase.firestore();
     db.collection("services").doc(data).get().then(item=>{
   console.log("data",item.data())
+  serviceCurrent = item.data();
   const html = `<h3>${item.data().name}</h3>
-  <h2>$149.99</h2>
+  <h4 id="idservice">${item.data().id}</h4>
   <ul class="list">
     <li><a class="active" href="#"><span>Category</span> : Household</a></li>
     <li><a href="#"><span>Availibility</span> : In Stock</a></li>
@@ -145,13 +147,13 @@ item.data().extras.forEach(extra=>{
 $("#extra").append(h);
 extra.options.forEach(option=>{
   if(option.default){
-const op = `<label class="btn  active">
-<input type="radio" name="${extra.name+extra.id}" id="${extra.name+extra.id}" checked> ${option.value}
-</label>`
-$("#"+extra.name+extra.id).append(op)
+    const op = `<label class="btn  active">
+    <input type="radio" name="${extra.name}"  value="${option.value}" checked> ${option.value}
+    </label>`
+    $("#"+extra.name+extra.id).append(op)
   }else{
     const op = `<label class="btn ">
-    <input type="radio" name="${extra.name+extra.id}" id="${extra.name+extra.id}"> ${option.value}
+    <input type="radio" name="${extra.name}"  value="${option.value}"> ${option.value}
   </label>`
   $("#"+extra.name+extra.id).append(op)
   }
@@ -159,5 +161,47 @@ $("#"+extra.name+extra.id).append(op)
 })
 })
     })
+}
+
+
+function addtocard(){
+  if(firebase.auth().currentUser){
+    var id = $("#idservice").text();
+    var quantity = $("input[name='qty']").val();
+    var option = [];
+    serviceCurrent.extras.forEach(it=>{
+      let ex = $("input[name='"+it.name+"']:checked").val();
+      if(ex){
+        option.push({name:it.name,value:ex})
+      }
+    })
+  var db = firebase.firestore();
+  db.collection("users")
+  .doc(firebase.auth().currentUser.uid)
+  .collection("carts")
+  .add({
+      extras: option,
+      id: serviceCurrent.id,
+      name: serviceCurrent.name,
+      slug: serviceCurrent.slug,
+      quantity: parseInt(quantity)
+  }).then(()=>{
+    $('#myModal').modal('toggle');
+  }).catch(function(error) {
+    console.error("Error writing document: ", error);
+});
+
+
+
+
+
+    console.log("id",id)
+    console.log("quantity",quantity)
+    console.log("option",option)
+
+  }else{
+    alert("Ban chua login")
+  }
+
 }
 

@@ -6,7 +6,9 @@ class OrderController {
     return view.render('orders')
   }
 
-
+  async cart({view}){
+    return view.render('carts')
+  }
   async store() {
     //d os
     console.log("abc")
