@@ -1,10 +1,8 @@
 var db = firebase.firestore();
 $(document).ready(function(){
-  console.log(firebase)
+  console.log(JSON.parse(localStorage.getItem('user')).uid)
 })
-if(firebase.auth().currentUser){
 
-}
 
 
 function getUrlparams(){
@@ -12,8 +10,8 @@ function getUrlparams(){
 let arr = path.split('/');
 return arr[2]
 }
-
-db.collection("users").doc('6Z7RGkmtLRSMNwDMmxOK5liiv7n1').collection('orderDetails').where('orderId','==',getUrlparams()).get()
+let uid = JSON.parse(localStorage.getItem('user')).uid
+db.collection("users").doc(uid).collection('orderDetails').where('orderId','==',getUrlparams()).get()
 .then(snapshot=>{
   snapshot.forEach(doc => {
     let a = doc.data().service.quantity

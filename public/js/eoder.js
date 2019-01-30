@@ -6,7 +6,8 @@ if(firebase.auth().currentUser){
 
 }
 
-db.collection("users").doc('6Z7RGkmtLRSMNwDMmxOK5liiv7n1').collection('orders').get()
+let uid = JSON.parse(localStorage.getItem('user')).uid
+db.collection("users").doc(uid).collection('orders').get()
 .then(snapshot=>{
   snapshot.forEach(doc => {
     console.log(doc.data())
