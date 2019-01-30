@@ -78,6 +78,14 @@
           var token = result.credential.accessToken;
           // The signed-in user info.
           var user = result.user;
+
+          var db = firebase.firestore()
+
+          db.collection("users").doc(user.uid).set({
+            uid: user.uid,
+            email: user.email
+          })
+
           // ...
         }).catch(function(error) {
           // Handle Errors here.
