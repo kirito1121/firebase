@@ -79,6 +79,7 @@
           // The signed-in user info.
           var user = result.user;
 
+          localStorage.setItem("user", JSON.stringify(user));
           var db = firebase.firestore()
 
           db.collection("users").doc(user.uid).set({
