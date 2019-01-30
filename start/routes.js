@@ -28,6 +28,9 @@ Route.post('/login',"UserController.postLogin").as('postlogin');
 Route.get('/contact',({view}) =>{
   return view.render('contact')
 }).as('contact');
+Route.get('/brand',({view}) =>{
+  return view.render('brand')
+}).as('brand');
 Route.resource("brands", "BrandController");
 Route.resource("services", "ServiceController");
 Route.resource("stores", "StoreController");

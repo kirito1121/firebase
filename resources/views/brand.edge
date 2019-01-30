@@ -1,0 +1,35 @@
+@layout('layouts.master')
+@section('content')
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Chi nhánh</h1>
+					<nav class="d-flex align-items-center">
+						<a href="{{route('home')}}">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+						<a href="{{route('brand')}}">Chi nhánh</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+  <!-- End Banner Area -->
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+            <div class="section-title">
+                <h2>Danh sách thương hiệu</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row abibi">
+    </div>
+</div>
+@endsection
+
+@section('script')
+  {{ script('js/brend')}}
+@endsection
+
+

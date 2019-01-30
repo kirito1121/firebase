@@ -14,17 +14,11 @@
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item active"><a class="nav-link" href="{{route('home')}}">Trang Chủ</a></li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                                 aria-expanded="false">Chi Nhánh</a>
-                                {{--  <ul class="dropdown-menu">  --}}
-                                    {{--  <li class="nav-item"><a class="nav-link" href="category.html">Coffee</a></li>  --}}
-                                    {{--  <li class="nav-item"><a class="nav-link" href="single-product.html">Milk</a></li>  --}}
-                                {{--  </ul>  --}}
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{route('brand')}}">Thương hiệu</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                                 aria-expanded="false">My Order</a>
+                              <a class="nav-link" href="{{route('orders')}}">My order</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Liên Hệ</a></li>
                             @loggedIn
