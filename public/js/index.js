@@ -16,14 +16,14 @@ db.collection("stores").limit(6).get()
     console.log(doc.data())
     const html = `<div class="col-lg-4">
                     <div class="categories_post">
-                        <img src="../img/blog/cat-post/cat-post-`+doc.data().id+`.jpg" alt="post">
+                        <img src="../img/blog/cat-post/cat-post-` + doc.data().id + `.jpg" alt="post">
                         <div class="categories_details">
                             <div class="categories_text">
-                                <a href="blog-details.html">
-                                    <h5>`+doc.data().name+`</h5>
+                                <a href="brand/${doc.data().brand.slug}/store/${doc.data().slug}">
+                                    <h5>` + doc.data().name + `</h5>
                                 </a>
                                 <div class="border_line"></div>
-                                <p>`+doc.data().description+`</p>
+                                <p>` + doc.data().description + `</p>
                             </div>
                         </div>
                     </div>
@@ -45,25 +45,6 @@ db.collection("services").limit(8).get()
             <div class="price">
                 <h6>$150.00</h6>
                 <h6 class="l-through">$210.00</h6>
-            </div>
-            <div class="prd-bottom">
-
-                <a href="" class="social-info">
-                    <span class="ti-bag"></span>
-                    <p class="hover-text">add to bag</p>
-                </a>
-                <a href="" class="social-info">
-                    <span class="lnr lnr-heart"></span>
-                    <p class="hover-text">Wishlist</p>
-                </a>
-                <a href="" class="social-info">
-                    <span class="lnr lnr-sync"></span>
-                    <p class="hover-text">compare</p>
-                </a>
-                <a href="" class="social-info">
-                    <span class="lnr lnr-move"></span>
-                    <p class="hover-text">view more</p>
-                </a>
             </div>
         </div>
     </div>
