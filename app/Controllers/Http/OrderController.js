@@ -18,7 +18,7 @@ class OrderController {
   }
 
 
-  async store({ request }) {
+  async store({ request,response }) {
     let {
       userId
     } = request.all();
@@ -61,6 +61,8 @@ class OrderController {
        await cartRef.doc(doc.id).delete()
       });
     })
+
+    return response.json({'status':"success"})
   }
 }
 
