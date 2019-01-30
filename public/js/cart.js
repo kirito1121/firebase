@@ -104,7 +104,7 @@ function checkout(){
     userId: user.uid
   },
   function(data, status){
-    $(location).attr("href", "/");
   });
+  $(location).attr("href", "/");
   console.log("ok")
 }
