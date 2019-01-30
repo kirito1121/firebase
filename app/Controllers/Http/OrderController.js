@@ -6,6 +6,10 @@ class OrderController {
     return view.render('orders')
   }
 
+  async index({ view }){
+    return view.render('orders')
+  }
+
 
   async store() {
     //d os
