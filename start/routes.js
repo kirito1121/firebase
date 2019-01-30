@@ -36,4 +36,4 @@ Route.resource("brands", "BrandController");
 Route.resource("services", "ServiceController");
 Route.resource("stores", "StoreController");
 Route.resource("extras", "ExtraController");
-Route.resource("orders", "OrderController");
+Route.resource("orders", "OrderController")
