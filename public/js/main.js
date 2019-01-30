@@ -5,6 +5,7 @@ $(document).ready(function(){
   $(".radiem").click(function() {
     firebase.auth().signOut()
 localStorage.clear()
+$(location).attr("href", "/");
   });
 
   if(localStorage.getItem('user')){
