@@ -35,3 +35,4 @@ Route.resource("services", "ServiceController");
 Route.resource("stores", "StoreController");
 Route.resource("extras", "ExtraController");
 Route.resource("orders", "OrderController")
+

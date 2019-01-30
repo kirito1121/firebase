@@ -10,6 +10,10 @@ class OrderController {
     return view.render('orders')
   }
 
+  async show({ view,params }){
+    return view.render('ordersdetails',{id: params.id})
+  }
+
 
   async store() {
     //d os

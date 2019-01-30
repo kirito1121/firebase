@@ -86,6 +86,9 @@
             email: user.email
           })
 
+
+          console.log(firebase.auth().currentUser)
+
           // ...
         }).catch(function(error) {
           // Handle Errors here.
@@ -126,6 +129,7 @@
         });
       });
   });
+
 
 </script>
 @endsection

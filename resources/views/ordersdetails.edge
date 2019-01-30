@@ -6,10 +6,10 @@
     <div class="container">
       <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
         <div class="col-first">
-          <h1>Danh sách order</h1>
+          <h1>Chi tiết order</h1>
           <nav class="d-flex align-items-center">
             <a href="{{route('home')}}">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
-            <a href="{{route('orders.index')}}">Danh sách order</a>
+            <a href="{{route('orders.index')}}">Chi tiết order</a>
           </nav>
         </div>
       </div>
@@ -21,16 +21,24 @@
     <div class="row justify-content-center">
         <div class="col-lg-6 text-center">
             <div class="section-title">
-                <h2>Danh sách order</h2>
+                <h2>Order No: {{id}}</h2>
             </div>
         </div>
     </div>
-    <ul class="list-group abilio">
-      </ul>
+    <div class="row">
+        <div class="col-4">
+          <div class="list-group lit" id="list-tab" role="tablist">
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="tab-content xi" id="nav-tabContent">
+          </div>
+        </div>
+      </div>
       <br>
 </div>
 @endsection
 
 @section('script')
-  {{ script('js/eoder')}}
+  {{ script('js/deteo')}}
 @endsection
